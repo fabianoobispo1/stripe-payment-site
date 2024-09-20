@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+ */
 
+/* const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!); */
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-
-export default function Home() {
-  const [amountCollected, setAmountCollected] = useState(0);
+export default function HomePage() {
+  /* const [amountCollected, setAmountCollected] = useState(0);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -46,50 +46,15 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
-  };
+  }; */
 
   return (
-    <div className="container">
-      <div className="header">
-        <p>Valor arrecadado: R${(amountCollected / 100).toFixed(2)}</p>
-      </div>
-      <div className="main">
-        <button role="link" onClick={handleClick} disabled={loading}>
-          {loading ? 'Redirecionando...' : 'Pagar R$1,00 para clicar'}
-        </button>
-      </div>
-      <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          height: 100vh;
-          justify-content: center;
-          align-items: center;
-        }
-        .header {
-          position: absolute;
-          top: 10px;
-          right: 20px;
-        }
-        .main {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-        }
-        button {
-          padding: 10px 20px;
-          font-size: 16px;
-          background-color: #0070f3;
-          color: white;
-          border: none;
-          cursor: pointer;
-        }
-        button:disabled {
-          background-color: #999;
-          cursor: not-allowed;
-        }
-      `}</style>
+    <div className="relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      a
     </div>
+    
+  
+
+    
   );
 }
