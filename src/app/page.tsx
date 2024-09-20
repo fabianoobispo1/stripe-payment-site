@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
+
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export default function Home() {
@@ -23,10 +24,11 @@ export default function Home() {
       const stripe = await stripePromise;
 
       const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
+        method: 'POST',       
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({id: 'test'}),
       });
 
       const { id } = await response.json();
