@@ -10,7 +10,12 @@ export async function GET() {
     const charges = await stripe.charges.list();
     const total = charges.data.reduce((acc, charge) => acc + charge.amount, 0);
     return NextResponse.json({ total });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (error: unknown) {
+    // Verificando se o erro é uma instância de Error
+    if (error instanceof Error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    } else {
+      return NextResponse.json({ error: 'Unknown error occurred' }, { status: 500 });
+    }
   }
 }

@@ -27,7 +27,12 @@ export async function POST() {
     });
 
     return NextResponse.json({ id: session.id });
-  } catch (err: any) {
-    return new NextResponse(err.message, { status: 500 });
+  } catch (error: unknown) {
+    // Verificando se o erro é uma instância de Error
+    if (error instanceof Error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    } else {
+      return NextResponse.json({ error: 'Unknown error occurred' }, { status: 500 });
+    }
   }
 }
