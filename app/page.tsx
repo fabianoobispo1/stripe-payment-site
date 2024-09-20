@@ -1,4 +1,4 @@
-import ButtonStupid from '@/components/github-auth-button';
+import ButtonStupid from '@/components/buttonStupid';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
