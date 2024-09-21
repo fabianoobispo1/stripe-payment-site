@@ -3,6 +3,7 @@ import '@uploadthing/react/styles.css';
 import type { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
 import './globals.css';
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: 'Botão Estúpido',
@@ -22,7 +23,7 @@ export default async function RootLayout({
       </head>
       <body className={'font-inter overflow-hidden'}>
         <NextTopLoader showSpinner={false} />
-        
+        <Analytics/>
           <Toaster />
           {children}
  
