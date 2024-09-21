@@ -4,7 +4,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Botão Estúpido',
-  description: 'Pagina inicial'
+  description: 'Pagina inicial de um botão estúpido',
+  keywords:'botão, botao, estupido, Botao, 1 real, '
 };
 
 export default function HomePage() {
