@@ -17,7 +17,7 @@ export async function POST() {
         }
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/success`,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/vlw`,
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/`
     });
 
